@@ -1,0 +1,76 @@
+class FakultasTeknik:
+    def __init__(self,Universitas, Fakultas, TahunAjar):
+        self.univ = Universitas
+        self.fak = Fakultas
+        self.TA = TahunAjar
+    def CetakData(self):
+        print('Universitas   : ',self.univ)
+        print('Fakultas      : ',self.fak)
+        print('Tahun Ajaran  : ',self.TA)
+
+class TeknikKomputer(FakultasTeknik):
+    def __init__(self,Universitas, Fakultas, TahunAjar, JumlahAngkatan):
+        self.JA = JumlahAngkatan
+        FakultasTeknik.__init__(self,Universitas, Fakultas, TahunAjar)
+    def CetakData(self):
+        print(32 * '-_')
+        print(32 * '_-')
+        print('Teknik Komputer')
+        print('Universitas   : ', self.univ)
+        print('Fakultas      : ', self.fak)
+        print('Tahun Ajaran  : ', self.TA)
+        print('Jumlah Angkatan di prodi Teknik Komputer adalah', self.JA)
+        print(32 * '-_')
+        print(32 * '_-')
+
+class PTIK(FakultasTeknik):
+    def __init__(self, Universitas, Fakultas, TahunAjar, JumlahAngkatan, Jurusan):
+        self.JA = JumlahAngkatan
+        self.J = Jurusan
+        FakultasTeknik.__init__(self, Universitas, Fakultas, TahunAjar)
+
+    def CetakData(self):
+        print('Pendidikan Teknik Informatika & Komputer')
+        print('Universitas   : ', self.univ)
+        print('Fakultas      : ', self.fak)
+        print('Jurusan      : ', self.J)
+        print('Tahun Ajaran  : ', self.TA)
+        print('Jumlah Angkatan di prodi Teknik Informatika & Komputer adalah', self.JA)
+        print(32 * '-_')
+        print(32 * '_-')
+class Mekatronika(FakultasTeknik):
+    def __init__(self, Universitas, Fakultas, TahunAjar, JumlahAngkatan):
+        self.JA = JumlahAngkatan
+        FakultasTeknik.__init__(self, Universitas, Fakultas, TahunAjar)
+
+    def CetakData(self):
+        print('Pendidikan Vokasi Mekatronika')
+        print('Universitas   : ', self.univ)
+        print('Fakultas      : ', self.fak)
+        print('Tahun Ajaran  : ', self.TA)
+        print('Jumlah Angkatan di prodi Pendidikan Vokasi Mekatronika adalah', self.JA)
+        print(32 * '-_')
+        print(32 * '_-')
+
+def main():
+
+    obj = FakultasTeknik('UNM', 'Teknik', 2018, )
+    obj.CetakData()
+
+    del obj
+
+    obj = TeknikKomputer('UNM', 'Teknik', 2018, 97 )
+    obj.CetakData()
+
+    obj1 = PTIK('UNM', 'Teknik', 2018, 150, 'Pendidikan Teknik Elektro')
+    obj1.CetakData()
+
+    del obj1
+
+    obj1 = Mekatronika('UNM', 'Teknik', 2018, 93)
+    obj1.CetakData()
+
+
+
+if __name__ == "__main__":
+    main()
